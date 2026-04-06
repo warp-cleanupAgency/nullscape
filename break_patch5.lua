@@ -1,4 +1,4 @@
-local CustomClass = game:WaitForChild("CustomClass").Value
+local CustomClass = workspace:WaitForChild("CustomClass").Value
 _G.RoomThing = true
 --Wanted gives you wanted parry
 --Wanted parry CANNOT parry screen/gui based entities, cannot parry curses
