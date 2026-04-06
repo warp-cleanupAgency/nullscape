@@ -1,4 +1,13 @@
-local CustomClass = workspace:WaitForChild("CustomClass").Value
+
+repeat task.wait() until game.Players.LocalPlayer.Character
+local CustomClass = "None"
+if game.Players.LocalPlayer:GetAttribute("Class") == "Wanted" or game.Players.LocalPlayer:GetAttribute("Class") == "Grappler" then
+    if game.Players.LocalPlayer:GetAttribute("Class") == "Grappler" then
+    CustomClass = "Glider"
+	else
+    CustomClass = "Wanted"
+	end
+end
 _G.RoomThing = true
 --Wanted gives you wanted parry
 --Wanted parry CANNOT parry screen/gui based entities, cannot parry curses
