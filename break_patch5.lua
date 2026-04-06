@@ -1,4 +1,4 @@
-local _G.CustomClass = game:WaitForChild("CustomClass").Value
+local CustomClass = game:WaitForChild("CustomClass").Value
 _G.RoomThing = true
 --Wanted gives you wanted parry
 --Wanted parry CANNOT parry screen/gui based entities, cannot parry curses
@@ -152,7 +152,7 @@ if c.Name == "GrapplePoint" then
 		end
 	end
 	c.Touched:Connect(function(hit)
-    if hit.Parent == char and not db and _G.CustomClass == "Glider" then
+    if hit.Parent == char and not db and CustomClass == "Glider" then
 		db = true
 		task.delay(0.5, function()
 		db = false
@@ -296,7 +296,7 @@ for i,v in room:GetChildren() do
 end
 end)
 ------------WANTED--------------------
-if _G.CustomClass == "Wanted" then
+if CustomClass == "Wanted" then
 	local CAS = game:GetService("ContextActionService")
 local RunService = game:GetService("RunService")
 
@@ -606,7 +606,7 @@ CAS:BindAction("ParryAction", handleParry, false, Enum.KeyCode.E)
 
 end
 ------------GLIDER---------------------
-if _G.CustomClass == "Glider" then
+if CustomClass == "Glider" then
 --// services
 local UIS = game:GetService("UserInputService")
 local RunService = game:GetService("RunService")
@@ -786,12 +786,12 @@ folder.Destroying:Once(function()
 print("disconnecfted")
 Mesh:Destroy()
 workspace.CurrentCamera.FieldOfView = 70
-if _G.CustomClass == "Glider" then
+if CustomClass == "Glider" then
 	 local CAS = game:GetService("ContextActionService")
 
 CAS:UnbindAction("GlideAction")
 end
-if _G.CustomClass == "Wanted" then
+if CustomClass == "Wanted" then
 	 local CAS = game:GetService("ContextActionService")
 
 CAS:UnbindAction("ParryAction")
